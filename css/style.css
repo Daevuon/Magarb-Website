@@ -190,6 +190,13 @@ h6,
 }
 
 @media (max-width: 768px) {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 2rem;
+        height: 2rem;
+        border-width: 6px;
+    }
+
     #header-carousel .carousel-item {
         position: relative;
         min-height: 450px;
