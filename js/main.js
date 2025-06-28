@@ -61,6 +61,11 @@
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
 
+    // Recalculate Isotope layout on window load
+    $(window).on('load', function() {
+        portfolioIsotope.isotope('layout');
+    });
+
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
