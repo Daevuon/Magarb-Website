@@ -528,3 +528,55 @@ h6,
 .copyright a:hover {
     color: var(--primary);
 }
+
+
+/* On-scroll animations for mobile */
+@media (max-width: 991.98px) {
+    /* Service section */
+    .service-item.animated .service-img img {
+        transform: scale(1.1);
+    }
+    .service-item.animated .service-text {
+        background: var(--light);
+    }
+    .service-item.animated .service-text h4 {
+        color: var(--primary);
+    }
+    .service-item.animated .service-text p {
+        color: var(--secondary);
+    }
+    .service-item.animated .service-text .btn-square {
+        color: #FFFFFF;
+        background: var(--primary);
+    }
+    .service-item.animated .service-text .btn {
+        color: var(--dark);
+        background: var(--primary);
+    }
+    .service-item.animated .service-text .btn i {
+        color: var(--light);
+    }
+
+    /* Projects section */
+    .portfolio-inner.animated::before,
+    .portfolio-inner.animated::after {
+        opacity: 1;
+    }
+    .portfolio-inner.animated .portfolio-text {
+        opacity: 1;
+        bottom: 25px;
+    }
+
+    /* Team section */
+    .team-item.animated .team-text {
+        background: var(--primary);
+    }
+    .team-item.animated .team-text h4,
+    .team-item.animated .team-text p {
+        color: #FFFFFF;
+    }
+    .team-item.animated .team-text .team-social .btn {
+        color: var(--primary);
+        background: #FFFFFF;
+    }
+}

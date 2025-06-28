@@ -13,7 +13,10 @@
     
     
     // Initiate the wowjs
-    new WOW().init();
+    new WOW({
+        offset: 150,
+        mobile: false
+    }).init();
 
 
     // Sticky Navbar
