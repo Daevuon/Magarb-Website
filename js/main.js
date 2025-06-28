@@ -14,8 +14,7 @@
     
     // Initiate the wowjs
     new WOW({
-        offset: 150,
-        mobile: false
+        offset: 150
     }).init();
 
 
