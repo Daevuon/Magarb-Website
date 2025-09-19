@@ -10,6 +10,16 @@
         }, 1);
     };
     spinner();
+    // Extra safety: hide spinner on window load as well (in case DOM was slow)
+    $(window).on('load', function () {
+        var $sp = $('#spinner');
+        if ($sp.length) $sp.removeClass('show');
+    });
+    // Last-resort timeout: force-hide after 4s even if other scripts fail
+    setTimeout(function() {
+        var el = document.getElementById('spinner');
+        if (el) el.classList.remove('show');
+    }, 4000);
     
     
     // Initiate the wowjs
@@ -68,19 +78,34 @@
 
 
     // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        items: 1,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
-    });
+    // $(".testimonial-carousel").owlCarousel({
+    //     autoplay: true,
+    //     smartSpeed: 1000,
+    //     items: 1,
+    //     dots: false,
+    //     loop: true,
+    //     nav: true,
+    //     navText : [
+    //         '<i class="bi bi-chevron-left"></i>',
+    //         '<i class="bi bi-chevron-right"></i>'
+    //     ]
+    // });
 
     
 })(jQuery);
+
+
+// Vanilla fallback (does not require jQuery) to ensure spinner never blocks rendering
+document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('spinner');
+    if (el) el.classList.remove('show');
+});
+window.addEventListener('load', function () {
+    var el = document.getElementById('spinner');
+    if (el) el.classList.remove('show');
+});
+setTimeout(function () {
+    var el = document.getElementById('spinner');
+    if (el) el.classList.remove('show');
+}, 6000);
 
